@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane fx:controller="view.ProfileView" dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http:javafx.com/javafx/8.0.171" xmlns:fx="http:javafx.com/fxml/1">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <VBox layoutX="-2.0" layoutY="1.0" prefHeight="398.0" prefWidth="174.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="13.0" prefWidth="175.0" text="User information" textFill="#bcb7b7">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Username">
+                     <VBox.margin>
+                        <Insets left="10.0" top="25.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="usernameField" disable="true" />
+                  <Label text="E-mail address">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="emailField" disable="true" />
+                  <Label text="Phone number">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="phoneField" disable="true">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButtonPressed" text="Search for books">
+                     <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutButtonPressed" text="Log out">
+                     <VBox.margin>
+                        <Insets left="55.0" top="25.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TabPane layoutY="-4.0" prefHeight="400.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="My books">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="mybookList" prefHeight="310.0" prefWidth="416.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="deleteButton" onAction="#deleteButtonPressed" layoutX="149.0" layoutY="326.0" mnemonicParsing="false" text="Delete book" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="175.0" />
+                              <Button fx:id="addButton" onAction="#addButtonPressed" layoutX="268.0" layoutY="326.0" mnemonicParsing="false" text="Add new book" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="42.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Borrowed">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="borrowedList" prefHeight="311.0" prefWidth="416.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="returnButton" onAction="#returnButtonPressed" layoutX="289.0" layoutY="326.0" mnemonicParsing="false" text="Return" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="68.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Lent">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="lentList" prefHeight="310.0" prefWidth="416.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Request">
+                    <content>
+                      <AnchorPane  minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="requestList" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="declineButton" onAction="#declineButtonPressed" layoutX="60.0" layoutY="324.0" mnemonicParsing="false" text="Decline request" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="200.0" />
+                              <Button fx:id="acceptButton" onAction="#acceptButtonPressed" layoutX="301.0" layoutY="324.0" mnemonicParsing="false" text="Accept request" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="50.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Wish list">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="wishList" layoutX="157.0" layoutY="45.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="deleteWishButton" onAction="#deleteWishButtonPressed" layoutX="266.0" layoutY="324.0" mnemonicParsing="false" text="Delete from Wish list" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="91.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
+

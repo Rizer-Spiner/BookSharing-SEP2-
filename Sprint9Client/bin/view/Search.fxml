@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:controller="view.SearchView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http:javafx.com/javafx/8.0.171" xmlns:fx="http:javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="623.0" text="Search for books" />
+      <HBox prefHeight="28.0" prefWidth="600.0">
+         <children>
+            <TextField fx:id="searchField" cache="true" pickOnBounds="false" prefHeight="27.0" prefWidth="538.0" HBox.hgrow="ALWAYS" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButtonClicked" text="Search" />
+         </children>
+      </HBox>
+      <ListView fx:id="searchList" prefHeight="315.0" prefWidth="600.0" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="requestButton" alignment="CENTER" mnemonicParsing="false" onAction="#requestButtonClicked" prefHeight="27.0" prefWidth="119.0" text="Request book">
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="cancelButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cancelButtonClicked" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
